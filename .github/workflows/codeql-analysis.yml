@@ -30,8 +30,8 @@ jobs:
       uses: github/codeql-action/init@v1
       with:
         languages: ${{ matrix.language }}
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+    - name: Build Xonitix
+      run: g++ -Wall -g -std=c++11 xonitix.cpp -o xonitix
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
